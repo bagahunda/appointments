@@ -1,32 +1,23 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+  <div class="font-sans flex flex-col h-screen">
+    <nav class="bg-white flex items-center justify-center p-4">
+      <router-link
+        to="/"
+        exact
+        class="py-1 mx-2 border-b-4 border-transparent	"
+        active-class="border-blue-500	"
+        >Appointments</router-link
+      >
+      <router-link
+        to="/addAppointment"
+        exact
+        class="py-1 mx-2 border-b-4 border-transparent	"
+        active-class="border-blue-500	"
+        >Create Apointment</router-link
+      >
+    </nav>
+    <main class="flex flex-1 bg-gray-200 p-4 flex items-center justify-center">
+      <router-view />
+    </main>
   </div>
 </template>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
